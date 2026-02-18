@@ -1,0 +1,27 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#211A2F"/>
+      <stop offset="1" stop-color="#120F1C"/>
+    </linearGradient>
+    <linearGradient id="house" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#603A93"/>
+      <stop offset="1" stop-color="#2F1F54"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="980" cy="180" r="120" fill="#A455F7" opacity="0.28"/>
+
+  <path d="M180 480L430 270L710 480V620H180V480Z" fill="url(#house)"/>
+  <path d="M700 620V420L900 300L1060 410V620H700Z" fill="#3A275F"/>
+
+  <rect x="300" y="500" width="130" height="120" rx="10" fill="#8E6FC7"/>
+  <rect x="470" y="500" width="130" height="120" rx="10" fill="#7D62B2"/>
+  <rect x="770" y="430" width="100" height="90" rx="10" fill="#8A6AC0"/>
+  <rect x="900" y="430" width="100" height="90" rx="10" fill="#7A5EAE"/>
+
+  <rect x="0" y="620" width="1200" height="180" fill="#0D0A15"/>
+  <ellipse cx="540" cy="650" rx="260" ry="32" fill="#5CE1FF" opacity="0.2"/>
+  <ellipse cx="880" cy="655" rx="210" ry="28" fill="#A455F7" opacity="0.24"/>
+</svg>
