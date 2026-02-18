@@ -253,9 +253,15 @@ main {
 }
 
 .scene-city {
-  background: linear-gradient(180deg, transparent 10%, #080c15 92%),
-    url('/assets/hero-city.svg') center / cover no-repeat;
+  background: linear-gradient(180deg, transparent 10%, #080c15 92%);
   transform: translateZ(70px);
+}
+
+.scene-city-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .scene-card {

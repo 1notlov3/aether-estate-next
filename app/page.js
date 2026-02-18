@@ -1,12 +1,15 @@
 import InteractiveEffects from '@/components/InteractiveEffects';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const withBasePath = (path) => `${basePath}${path}`;
+
 const listings = [
   {
     title: 'Ocean Penthouse',
     subtitle: '145 м² · 3 спальни · панорамные окна',
     city: 'Сочи',
     price: '34.5 млн ₽',
-    image: '/assets/listing-ocean.svg',
+    image: withBasePath('/assets/listing-ocean.svg'),
     alt: 'Ocean penthouse',
   },
   {
@@ -14,7 +17,7 @@ const listings = [
     subtitle: '98 м² · 2 спальни · smart home',
     city: 'Москва-Сити',
     price: '28.9 млн ₽',
-    image: '/assets/listing-loft.svg',
+    image: withBasePath('/assets/listing-loft.svg'),
     alt: 'Skyline loft',
   },
   {
@@ -22,7 +25,7 @@ const listings = [
     subtitle: '220 м² · 4 спальни · закрытый клубный посёлок',
     city: 'Новая Рига',
     price: '62 млн ₽',
-    image: '/assets/listing-villa.svg',
+    image: withBasePath('/assets/listing-villa.svg'),
     alt: 'Private villa',
   },
 ];
@@ -81,7 +84,14 @@ export default function HomePage() {
           <div className="hero-scene" aria-hidden="true">
             <div className="scene-layer scene-glow" data-depth="0.08" />
             <div className="scene-layer scene-grid" data-depth="0.16" />
-            <div className="scene-layer scene-city" data-depth="0.26" />
+            <div className="scene-layer scene-city" data-depth="0.26">
+              <img
+                src={withBasePath('/assets/hero-city.svg')}
+                alt=""
+                className="scene-city-image"
+                aria-hidden="true"
+              />
+            </div>
             <div className="scene-layer scene-card" data-depth="0.38">
               <p>Featured</p>
               <h3>Ocean Residence</h3>
