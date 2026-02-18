@@ -5,28 +5,47 @@ const withBasePath = (path) => `${basePath}${path}`;
 
 const listings = [
   {
-    title: 'Ocean Penthouse',
-    subtitle: '145 м² · 3 спальни · панорамные окна',
-    city: 'Сочи',
-    price: '34.5 млн ₽',
-    image: withBasePath('/assets/listing-ocean.svg'),
-    alt: 'Ocean penthouse',
-  },
-  {
-    title: 'Skyline Loft',
-    subtitle: '98 м² · 2 спальни · smart home',
+    title: 'Orbital Penthouse',
+    subtitle: 'Панорама 270° · smart glass · private lounge',
     city: 'Москва-Сити',
-    price: '28.9 млн ₽',
+    price: '41 млн ₽',
     image: withBasePath('/assets/listing-loft.svg'),
-    alt: 'Skyline loft',
+    alt: 'Orbital Penthouse',
   },
   {
-    title: 'Private Villa',
-    subtitle: '220 м² · 4 спальни · закрытый клубный посёлок',
+    title: 'Aether Villa',
+    subtitle: '220 м² · infinity pool · клубный посёлок',
     city: 'Новая Рига',
-    price: '62 млн ₽',
+    price: '67 млн ₽',
     image: withBasePath('/assets/listing-villa.svg'),
-    alt: 'Private villa',
+    alt: 'Aether Villa',
+  },
+  {
+    title: 'Neon Coast Residence',
+    subtitle: '145 м² · первая линия · private SPA',
+    city: 'Сочи',
+    price: '36.8 млн ₽',
+    image: withBasePath('/assets/listing-ocean.svg'),
+    alt: 'Neon Coast Residence',
+  },
+];
+
+const scenes = [
+  {
+    title: 'Сцена 01 — Establishing Shot',
+    text: 'Aerial shot of a futuristic luxury skyline at blue hour, cinematic, smooth drone movement, premium real estate advertisement style.',
+  },
+  {
+    title: 'Сцена 02 — Interior Reveal',
+    text: 'Ultra modern penthouse interior, floor-to-ceiling windows, sun rays, elegant camera dolly movement, glossy surfaces.',
+  },
+  {
+    title: 'Сцена 03 — Lifestyle Moment',
+    text: 'Rooftop infinity pool, subtle human silhouettes, warm sunset, slow motion details, high-end cinematic look.',
+  },
+  {
+    title: 'Сцена 04 — Final CTA',
+    text: 'Night city lights, logo reveal, text overlay “Own The Future”, dramatic depth of field, premium ad ending.',
   },
 ];
 
@@ -35,56 +54,58 @@ export default function HomePage() {
     <>
       <InteractiveEffects />
 
-      <header className="topbar container" data-scroll-speed="0.1">
+      <header className="topbar container" data-scroll-speed="0.08">
         <a href="#" className="logo">
-          Aether <span>Estate</span>
+          Aether <span>District</span>
         </a>
         <nav>
-          <a href="#listings">Объекты</a>
-          <a href="#advantages">Преимущества</a>
+          <a href="#showcase">Каталог</a>
+          <a href="#video">AI Video</a>
           <a href="#contact">Контакты</a>
         </nav>
-        <button className="btn btn-outline magnetic">Подбор за 2 минуты</button>
+        <button className="btn btn-outline magnetic">Собрать подборку</button>
       </header>
 
       <main>
         <section className="hero container" id="hero">
-          <div className="hero-copy" data-scroll-speed="0.2">
-            <p className="eyebrow">NEXT GEN PROPERTY EXPERIENCE</p>
+          <div className="hero-copy" data-scroll-speed="0.18">
+            <p className="eyebrow">FUTURE REAL ESTATE ENGINE</p>
             <h1>
-              Недвижимость, которая
-              <span> выглядит дороже</span>
+              Не просто
+              <span> недвижимость,</span>
+              <em> а визуальный статус</em>
             </h1>
             <p className="hero-lead">
-              Продажа квартир, вилл и smart-лофтов в премиум-сегменте.
-              Виртуальные 3D-туры, прозрачная аналитика и сделки без стресса.
+              Делаем продажу объектов как fashion-кампанию: необычный дизайн,
+              AI-визуалы, motion-подача, digital-воронка под лиды.
             </p>
+
             <div className="hero-actions">
-              <button className="btn btn-solid magnetic">Смотреть объекты</button>
-              <button className="btn btn-ghost magnetic">
-                Назначить консультацию
-              </button>
+              <button className="btn btn-solid magnetic">Открыть каталог</button>
+              <button className="btn btn-ghost magnetic">Запросить стратегию</button>
             </div>
+
             <div className="metrics">
               <div>
-                <strong>1,420+</strong>
-                <span>сделок закрыто</span>
+                <strong>+38%</strong>
+                <span>рост конверсии на лендинге</span>
               </div>
               <div>
-                <strong>97%</strong>
-                <span>клиентов по рекомендации</span>
+                <strong>12 дней</strong>
+                <span>от концепта до запуска</span>
               </div>
               <div>
-                <strong>48ч</strong>
-                <span>средний срок подбора</span>
+                <strong>24/7</strong>
+                <span>онлайн-витрина объектов</span>
               </div>
             </div>
           </div>
 
           <div className="hero-scene" aria-hidden="true">
-            <div className="scene-layer scene-glow" data-depth="0.08" />
-            <div className="scene-layer scene-grid" data-depth="0.16" />
-            <div className="scene-layer scene-city" data-depth="0.26">
+            <div className="scene-layer scene-glow" data-depth="0.06" />
+            <div className="scene-layer scene-grid" data-depth="0.14" />
+            <div className="scene-layer scene-orbit" data-depth="0.22" />
+            <div className="scene-layer scene-city" data-depth="0.3">
               <img
                 src={withBasePath('/assets/hero-city.svg')}
                 alt=""
@@ -92,18 +113,31 @@ export default function HomePage() {
                 aria-hidden="true"
               />
             </div>
-            <div className="scene-layer scene-card" data-depth="0.38">
-              <p>Featured</p>
-              <h3>Ocean Residence</h3>
-              <span>от 34.5 млн ₽</span>
+            <div className="scene-layer scene-card" data-depth="0.42">
+              <p>Signature Object</p>
+              <h3>Orbital Penthouse</h3>
+              <span>41 млн ₽</span>
             </div>
           </div>
         </section>
 
-        <section className="listings container" id="listings" data-scroll-speed="0.08">
+        <section className="ticker-wrap" aria-hidden="true">
+          <div className="ticker">
+            <span>AI STAGING</span>
+            <span>3D PARALLAX</span>
+            <span>MOTION STORYTELLING</span>
+            <span>PREMIUM BRANDING</span>
+            <span>AI STAGING</span>
+            <span>3D PARALLAX</span>
+            <span>MOTION STORYTELLING</span>
+            <span>PREMIUM BRANDING</span>
+          </div>
+        </section>
+
+        <section className="showcase container" id="showcase" data-scroll-speed="0.05">
           <div className="section-head">
-            <p className="eyebrow">TOP PICKS</p>
-            <h2>Актуальные объекты</h2>
+            <p className="eyebrow">CURATED LISTINGS</p>
+            <h2>Объекты в необычной подаче</h2>
           </div>
 
           <div className="cards">
@@ -125,44 +159,33 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="advantages container" id="advantages">
+        <section className="video-block container" id="video">
           <div className="section-head">
-            <p className="eyebrow">WHY AETHER</p>
-            <h2>Сильная подача + быстрый результат</h2>
+            <p className="eyebrow">GOOGLE VIDS / VEO FLOW</p>
+            <h2>Готовый storyboard для AI-видео</h2>
           </div>
 
-          <div className="adv-grid">
-            <article>
-              <h3>3D-тур и AR-превью</h3>
-              <p>
-                Клиент видит атмосферу объекта до показа: свет, фактура, планировка,
-                сценарии жизни.
-              </p>
-            </article>
-            <article>
-              <h3>AI-оценка цены</h3>
-              <p>
-                Считаем реальную рыночную стоимость на базе спроса, района и
-                инфраструктуры.
-              </p>
-            </article>
-            <article>
-              <h3>Сделка под ключ</h3>
-              <p>
-                Ипотека, юрист, проверка, переговоры — все этапы в одном окне и с
-                понятным таймлайном.
-              </p>
-            </article>
+          <div className="scene-grid-cards">
+            {scenes.map((scene) => (
+              <article className="scene-prompt" key={scene.title}>
+                <h3>{scene.title}</h3>
+                <p>{scene.text}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="video-note">
+            <strong>Формат:</strong> 4 сцены × 4–6 сек · cinematic · 24fps · premium color grading
           </div>
         </section>
 
-        <section className="contact container" id="contact" data-scroll-speed="0.05">
+        <section className="contact container" id="contact" data-scroll-speed="0.03">
           <div>
-            <p className="eyebrow">LET&apos;S TALK</p>
-            <h2>Подберём объект под твой сценарий жизни</h2>
+            <p className="eyebrow">LET&apos;S BUILD</p>
+            <h2>Соберём витрину, от которой сложно уйти без заявки</h2>
             <p>
-              Оставь контакт — менеджер вернётся с выборкой и финансовой моделью за
-              15 минут.
+              Оставь контакт — пришлю концепт, структуру блоков, storyboard и
+              визуальный стиль под твой рынок.
             </p>
           </div>
 
@@ -176,19 +199,19 @@ export default function HomePage() {
               <input type="tel" placeholder="+7 (___) ___-__-__" />
             </label>
             <label>
-              Бюджет
-              <input type="text" placeholder="25–45 млн ₽" />
+              Регион / город
+              <input type="text" placeholder="Москва" />
             </label>
             <button className="btn btn-solid magnetic" type="button">
-              Получить подборку
+              Хочу такой же сайт
             </button>
           </form>
         </section>
       </main>
 
       <footer className="container footer">
-        <p>© 2026 Aether Estate</p>
-        <p>Design language: 3D urban noir</p>
+        <p>© 2026 Aether District</p>
+        <p>Visual mode: experimental urban noir</p>
       </footer>
     </>
   );

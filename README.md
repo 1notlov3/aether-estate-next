@@ -7,7 +7,9 @@
 - tilt-эффекты карточек
 - magnetic-кнопки
 - premium dark-theme
+- экспериментальный необычный layout + ticker + storyboard block
 - локальные сгенерированные SVG-ассеты в `public/assets`
+- готовый prompt-pack для Google Vids в `docs/google-vids-scenes.md`
 
 ## Запуск локально
 
